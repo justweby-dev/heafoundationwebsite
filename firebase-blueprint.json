@@ -1,0 +1,211 @@
+{
+  "entities": {
+    "Project": {
+      "title": "Project",
+      "description": "A foundation project",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "description": { "type": "string", "maxLength": 5000 },
+        "location": { "type": "string", "maxLength": 200 },
+        "status": { "type": "string", "enum": ["Active", "Completed", "Upcoming"] },
+        "image": { "type": "string", "maxLength": 1000 },
+        "isFeatured": { "type": "boolean" },
+        "date": { "type": "string" },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["title", "description", "status", "createdAt", "updatedAt"]
+    },
+    "Story": {
+      "title": "Story",
+      "description": "News and stories",
+      "type": "object",
+      "properties": {
+        "title": { "type": "string", "maxLength": 150 },
+        "category": { "type": "string", "maxLength": 100 },
+        "description": { "type": "string", "maxLength": 500 },
+        "content": { "type": "string", "maxLength": 20000 },
+        "author": { "type": "string", "maxLength": 100 },
+        "image": { "type": "string", "maxLength": 1000 },
+        "readTime": { "type": "string", "maxLength": 20 },
+        "createdAt": { "type": "number" },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["title", "category", "content", "createdAt", "updatedAt"]
+    },
+    "GalleryItem": {
+      "title": "GalleryItem",
+      "description": "Gallery image",
+      "type": "object",
+      "properties": {
+        "image": { "type": "string", "maxLength": 1000 },
+        "caption": { "type": "string", "maxLength": 200 },
+        "category": { "type": "string", "maxLength": 100 },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["image", "createdAt"]
+    },
+    "VolunteerApplication": {
+      "title": "VolunteerApplication",
+      "description": "Volunteer application submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "ageRange": { "type": "string", "maxLength": 50 },
+        "location": { "type": "string", "maxLength": 200 },
+        "skills": { "type": "string", "maxLength": 1000 },
+        "interests": { "type": "string", "maxLength": 1000 },
+        "availability": { "type": "string", "maxLength": 200 },
+        "reason": { "type": "string", "maxLength": 2000 },
+        "status": { "type": "string", "enum": ["Pending", "Approved", "Rejected"] },
+        "adminNotes": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "email", "phone", "status", "createdAt"]
+    },
+    "Donation": {
+      "title": "Donation",
+      "description": "Manual bKash donation confirmation",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "amount": { "type": "number" },
+        "purpose": { "type": "string", "maxLength": 200 },
+        "transactionId": { "type": "string", "maxLength": 100 },
+        "note": { "type": "string", "maxLength": 1000 },
+        "status": { "type": "string", "enum": ["Pending", "Approved", "Rejected"] },
+        "adminNotes": { "type": "string", "maxLength": 2000 },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "phone", "amount", "transactionId", "status", "createdAt"]
+    },
+    "ContactMessage": {
+      "title": "ContactMessage",
+      "description": "Contact form submission",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "email": { "type": "string", "maxLength": 150 },
+        "subject": { "type": "string", "maxLength": 200 },
+        "message": { "type": "string", "maxLength": 5000 },
+        "isRead": { "type": "boolean" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "email", "subject", "message", "isRead", "createdAt"]
+    },
+    "ImpactStat": {
+      "title": "ImpactStat",
+      "description": "Impact statistics",
+      "type": "object",
+      "properties": {
+        "label": { "type": "string", "maxLength": 100 },
+        "number": { "type": "string", "maxLength": 50 },
+        "description": { "type": "string", "maxLength": 200 },
+        "order": { "type": "number" },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["label", "number", "order", "createdAt"]
+    },
+    "TeamMember": {
+      "title": "TeamMember",
+      "description": "Team member profile",
+      "type": "object",
+      "properties": {
+        "name": { "type": "string", "maxLength": 100 },
+        "role": { "type": "string", "maxLength": 100 },
+        "photo": { "type": "string", "maxLength": 1000 },
+        "bio": { "type": "string", "maxLength": 1000 },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["name", "role", "createdAt"]
+    },
+    "Settings": {
+      "title": "Settings",
+      "description": "Global settings",
+      "type": "object",
+      "properties": {
+        "orgName": { "type": "string", "maxLength": 100 },
+        "orgDescription": { "type": "string", "maxLength": 500 },
+        "email": { "type": "string", "maxLength": 150 },
+        "phone": { "type": "string", "maxLength": 50 },
+        "address": { "type": "string", "maxLength": 500 },
+        "bkashNumber": { "type": "string", "maxLength": 20 },
+        "footerInfo": { "type": "string", "maxLength": 500 },
+        "updatedAt": { "type": "number" }
+      },
+      "required": ["orgName", "updatedAt"]
+    },
+    "Admin": {
+      "title": "Admin",
+      "description": "Admin privileges",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 150 },
+        "role": { "type": "string", "enum": ["admin"] },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["email", "role", "createdAt"]
+    },
+    "NewsletterSubscriber": {
+      "title": "NewsletterSubscriber",
+      "description": "Newsletter email subscriber",
+      "type": "object",
+      "properties": {
+        "email": { "type": "string", "maxLength": 150 },
+        "createdAt": { "type": "number" }
+      },
+      "required": ["email", "createdAt"]
+    }
+  },
+  "firestore": {
+    "projects/{projectId}": {
+      "schema": { "$ref": "#/entities/Project" },
+      "description": "Public projects"
+    },
+    "stories/{storyId}": {
+      "schema": { "$ref": "#/entities/Story" },
+      "description": "Public stories"
+    },
+    "gallery/{galleryId}": {
+      "schema": { "$ref": "#/entities/GalleryItem" },
+      "description": "Public gallery items"
+    },
+    "volunteers/{volunteerId}": {
+      "schema": { "$ref": "#/entities/VolunteerApplication" },
+      "description": "Volunteer applications"
+    },
+    "donations/{donationId}": {
+      "schema": { "$ref": "#/entities/Donation" },
+      "description": "Donation confirmations"
+    },
+    "messages/{messageId}": {
+      "schema": { "$ref": "#/entities/ContactMessage" },
+      "description": "Contact form submissions"
+    },
+    "impact/{impactId}": {
+      "schema": { "$ref": "#/entities/ImpactStat" },
+      "description": "Impact statistics"
+    },
+    "team/{teamId}": {
+      "schema": { "$ref": "#/entities/TeamMember" },
+      "description": "Team members"
+    },
+    "settings/{settingId}": {
+      "schema": { "$ref": "#/entities/Settings" },
+      "description": "Global organization settings (usually a single doc like 'global')"
+    },
+    "admins/{adminId}": {
+      "schema": { "$ref": "#/entities/Admin" },
+      "description": "Admin users"
+    },
+    "newsletter/{subscriberId}": {
+      "schema": { "$ref": "#/entities/NewsletterSubscriber" },
+      "description": "Newsletter subscribers"
+    }
+  }
+}

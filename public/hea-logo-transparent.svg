@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" fill="none">
+  
+  <g id="hea-logo">
+    <path d="M 39 16 L 49 16 L 49 35 C 49 23, 62 16, 84 16 L 84 26 C 65 26, 49 31, 39 44 Z" fill="currentColor" />
+    <path d="M 39 16 L 49 16 L 49 35 C 49 23, 62 16, 84 16 L 84 26 C 65 26, 49 31, 39 44 Z" fill="currentColor" transform="rotate(90 50 50)" />
+    <path d="M 39 16 L 49 16 L 49 35 C 49 23, 62 16, 84 16 L 84 26 C 65 26, 49 31, 39 44 Z" fill="currentColor" transform="rotate(180 50 50)" />
+    <path d="M 39 16 L 49 16 L 49 35 C 49 23, 62 16, 84 16 L 84 26 C 65 26, 49 31, 39 44 Z" fill="currentColor" transform="rotate(270 50 50)" />
+  </g>
+</svg>

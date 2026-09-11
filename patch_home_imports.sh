@@ -1,0 +1,1 @@
+sed -i 's/import { useSEO } from "..\/hooks\/useSEO";/import { useSEO } from "..\/hooks\/useSEO";\nimport { useState, useEffect } from "react";\nimport { db } from "..\/lib\/firebase";\nimport { collection, query, where, getCountFromServer } from "firebase\/firestore";/' src/pages/Home.tsx
